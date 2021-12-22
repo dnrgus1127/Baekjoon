@@ -16,17 +16,27 @@ public class App
         3.고른 수열은 비내림차순이어야 한다.
         4. 길이가 K인 수열 A가 A1 ≤ A2 ≤ ... ≤ AK-1 ≤ AK를 만족하면, 비내림차순이라고 한다. 
         5. 1 <= M <= N <= 8
-    */
+    */  
+    public static void output(int n, int m){
+        for(int i=1;i<=n;i++){
+            System.out.print(i+" ");
+            if(m>1){
+                output(i,m-1);
+            }
+        }
+        System.out.println();
+        return;
+    }
 
     public static void main( String[] args ) throws Exception
     {
         BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
         int N =3, M=4;
         StringTokenizer st;
-        //st = new StringTokenizer(bfr.readLine());
-        //N = Integer.parseInt((st.nextToken()));
-        //M = Integer.parseInt((st.nextToken()));
-        System.out.println("N:"+N+"M:"+M);
+        st = new StringTokenizer(bfr.readLine());
+        N = Integer.parseInt((st.nextToken()));
+        M = Integer.parseInt((st.nextToken()));
+        output(N,M);
         
     }
 }
