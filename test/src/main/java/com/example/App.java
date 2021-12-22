@@ -21,7 +21,7 @@ public class App
     static int N = 0;
     static int M = 0;
     public static void output(int per_var, int count){
-        if(M == count){
+        if(M == count){ // M개의 항이 있는 경우만 출력
             for(int i=0;i<M;i++)
             {
                 System.out.print(buf[i] + " ");
@@ -48,9 +48,13 @@ public class App
         st = new StringTokenizer(bfr.readLine());
         N = Integer.parseInt((st.nextToken()));
         M = Integer.parseInt((st.nextToken()));
-        for(int i=0;i<M;i++){
-            output(1,0);
-        }
+        
+        output(1,0);
+        
         
     }
 }
+
+/*
+ 1st submit , fail  ->  
+*/
