@@ -33,8 +33,10 @@ public class App
         
         buf[count] = per_var;
         for(int i=0;i<=N-per_var;i++){
-            output(buf[count] + i ,count+1);
-        }
+            buf[count] += i;
+            output(buf[count], count+1);
+            buf[count] -= i;
+        } 
     }
 
 
