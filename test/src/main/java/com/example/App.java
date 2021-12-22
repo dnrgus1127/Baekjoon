@@ -17,26 +17,38 @@ public class App
         4. 길이가 K인 수열 A가 A1 ≤ A2 ≤ ... ≤ AK-1 ≤ AK를 만족하면, 비내림차순이라고 한다. 
         5. 1 <= M <= N <= 8
     */  
-    public static void output(int n, int m){
-        for(int i=1;i<=n;i++){
-            System.out.print(i+" ");
-            if(m>1){
-                output(i,m-1);
+    static int[] buf = {0,0,0,0,0,0,0,0,0,0};
+    static int N = 0;
+    static int M = 0;
+    public static void output(int per_var, int count){
+        if(M == count){
+            for(int i=0;i<M;i++)
+            {
+                System.out.print(buf[i] + " ");
+                
             }
+            System.out.println();
+            return;
         }
-        System.out.println();
-        return;
+        
+        buf[count] = per_var;
+        for(int i=0;i<=N-per_var;i++){
+            output(buf[count] + i ,count+1);
+        }
     }
+
 
     public static void main( String[] args ) throws Exception
     {
+        
         BufferedReader bfr = new BufferedReader(new InputStreamReader(System.in));
-        int N =3, M=4;
         StringTokenizer st;
         st = new StringTokenizer(bfr.readLine());
         N = Integer.parseInt((st.nextToken()));
         M = Integer.parseInt((st.nextToken()));
-        output(N,M);
+        for(int i=0;i<M;i++){
+            output(1,0);
+        }
         
     }
 }
