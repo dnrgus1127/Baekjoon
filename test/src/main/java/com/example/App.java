@@ -56,5 +56,21 @@ public class App
 }
 
 /*
- 1st submit , fail  ->  
+ 1st submit , fail  ->  51~53 줄 이전 코드 수정 안해서 오류 발생
+ 2nd submit , success
+ memory : 21476KB, time : 664ms
+
+ code analysis
+
+ 
+ private static void go(char start_value, char max_value, int len, char[] buff, int index) {
+		if(len == 0) sb.append(buff).append('\n'); -> StringBuilder에 buff의 내용과 줄바꿈 개행문자 추가 (시간 단축?)
+		else {
+			for (char i = start_value; i < max_value; i++) {  -> char로 메모리 단축?
+				buff[index] = i;
+				buff[index + 1] = ' ';
+				go(i, max_value, len - 1, buff, index + 2);
+			}
+		}
+	}
 */
